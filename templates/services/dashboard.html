@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% static 'assets/css/forms.css' %}
+{% block title %} EasyPortfolios-Infor{% endblock %}
+
+{% block login %}{% endblock %}
+{% block signup %}{% endblock %}
+
+{% for link in links %}
+{% block content %}
+
+    <h2>Welcome</h2>
+    <div class="row">
+    <div class="col-md-4">
+        <button ><a href="/services"><span type="button" class="btn-info" id="button" >Create Your Portfolio</span></a></button>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    </div><br><br>
+
+
+
+
+
+    <h2> Here is your  <a href="/portfolio">portfolio's link</a></h2>
+    <h2>{{ link.portfolio }}</h2>
+
+
+
+{% endblock %}
+{% endfor %}
+
+
+
+
