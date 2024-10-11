@@ -1,0 +1,10 @@
+{% extends 'home/base.html' %}
+{% block login %}{% endblock %}
+{% block signup %}{% endblock %}
+
+{% block content %}
+  <h2>Portfolio  Details</h2>
+  <p class="pa">Portfolio: <a href="/dashboard">{{ user.portfolio }}</a></p>
+  <p class="pa">Email: {{ user.email }}</p>
+  <a href="{% url 'user_list' %}">Back to Portfolio List</a>
+{% endblock %}
