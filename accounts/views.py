@@ -1,11 +1,11 @@
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
 from django.contrib import messages
 from django.shortcuts import render, redirect
-
-
 
 
 def signup(request):
@@ -41,10 +41,11 @@ def signup(request):
         return render(request, 'registration/register.html')
 
 
-
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
+
+
 
 def login(request):
     if request.method == 'POST':
@@ -55,7 +56,8 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('services')
+            messages.info(request, 'Success')
+            return redirect('user_list')
         else:
             messages.info(request, 'Invalid Username or Password')
             return redirect('login')
